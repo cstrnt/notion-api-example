@@ -2,6 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const Notion = require('notion-api-js');
 
+if (process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line
+  require('dotenv').load();
+}
+
 let api;
 
 const app = express();
